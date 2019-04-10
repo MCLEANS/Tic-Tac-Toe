@@ -4,6 +4,14 @@
 
 Game game;
 
+void logo(){
+  cout<<"################################################################"<<endl;
+  cout<<"####################### TIC TAC TOE ############################"<<endl;
+  cout<<"#########                             BY: JACK MCLEANS #########"<<endl;
+  cout<<"################################################################"<<endl;
+  cout<<"\n \n \n";
+}
+
 int main(){
         bool win=false;
         system("touch data.csv");
@@ -11,12 +19,8 @@ int main(){
         myfile.open("data.csv");
         myfile<<"Tic Tac Toe Game stats \n";
         myfile<<"X Position,Y Position,Player,Winner \n";
-        cout<<"################################################################"<<endl;
-        cout<<"####################### TIC TAC TOE ############################"<<endl;
-        cout<<"#########                             BY: JACK MCLEANS #########"<<endl;
-        cout<<"################################################################"<<endl;
-        cout<<"\n \n \n";
 
+        logo();
 
 
         game.plotBoard();
@@ -45,6 +49,8 @@ int main(){
         myfile<<",";
         myfile<<1;
         myfile<<"\n";
+        system("clear");
+        logo();
         game.plotBoard();
 
     while(1){
@@ -53,6 +59,7 @@ int main(){
     cout<<"\n";
     cout<<player<<"st Player"<<endl;
     if(player==1){
+
         int xpos;
         int ypos;
         cout<<"Player 1: Enter your 'O' location: "<<flush;
@@ -77,6 +84,7 @@ int main(){
         myfile<<"\n";
         game.play1(xpos,ypos);
 
+
         }
     if(player==2){
         int xpos;
@@ -94,6 +102,7 @@ int main(){
             cin>>ypos;
             cout<<"\n";
 
+
          }
         myfile<<xpos;
         myfile<<",";
@@ -102,11 +111,14 @@ int main(){
         myfile<<2;
         myfile<<"\n";
          game.play2(xpos,ypos);
+
     }
 
     if((game.moves1+game.moves2)==9){
         cout<<"Game Ends in a tie"<<endl;
     }
+    system("clear");
+    logo();
 
     game.plotBoard();
     win=game.checkwin();
@@ -115,6 +127,7 @@ int main(){
         break;
     }
      cout<<"\n";
+
     }
     return 0;
 }

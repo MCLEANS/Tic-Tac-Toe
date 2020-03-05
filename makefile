@@ -5,7 +5,7 @@ LFLAGS= -Wall
 
 
 all : $(OBJS)
-	$(CC) $(LFLAGS) $(OBJS) -o tictactoe
+	$(CC) $(LFLAGS) $(OBJS) -o  tictactoe
 tictactoe.o : tictactoe.cpp tictactoe.h
 	$(CC) $(CFLAGS) tictactoe.cpp
 main.o : main.cpp tictactoe.h
